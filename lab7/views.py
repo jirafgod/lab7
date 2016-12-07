@@ -84,7 +84,7 @@ class reg2(View):
 
 class Login(View):
     def get(self, request):
-        return render(request, 'login.html', {'errors': '', 'login': ''})
+        return render(request, 'login.html')
 
     def post(self, request):
         log = request.POST.get('login', '')
@@ -97,4 +97,4 @@ class Login(View):
             login(request, user)
             return redirect('/')
         errors.append('Логин или пароль неверны')
-        return render(request, 'login.html', {'errors': mark_safe('<br>'.join(errors)), 'login': login})
+        return render(request, 'login.html', {'errors': errors, 'login': login})
