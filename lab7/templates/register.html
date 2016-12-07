@@ -1,0 +1,30 @@
+{% for error in errors %}
+    {{ error }}
+    </br>
+{% endfor %}
+
+<form action="/reg1" method="POST">
+   <label for="last_name">Фамилия</label>
+   <input type="text" name="last_name" id="last_name" value="{{ last_name }}"><br>
+
+   <label for="first_name">Имя</label>
+   <input type="text" name="first_name" id="first_name" value="{{ first_name }}"><br>
+   
+   <label for="login">Логин</label>
+   <input type="text" name="login" id="login" value="{{ login }}"><br>
+
+   <label for="password">Пароль</label>
+   <input type="password" name="password" id="password"><br>
+
+   <label for="password2">Пароль еще раз</label>
+   <input type="password" name="password2" id="password2"><br>
+
+   <label for="email">Email</label>
+   <input type="text" name="email" id="email" value="{{ email }}"><br>
+
+    {% csrf_token %}
+
+   <button type="submit">Зарегистрироваться</button>
+</form>
+
+

@@ -1,0 +1,15 @@
+{% for error in errors %}
+    {{ error }}
+    </br>
+{% endfor %}
+
+
+<form action="/reg2" method="POST">
+   {{ form }}
+
+    {% csrf_token %}
+
+   <button type="submit">Зарегистрироваться</button>
+</form>
+
+
