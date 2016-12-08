@@ -76,7 +76,7 @@ class reg2(View):
             return render(request, 'register2.html', {'errors': '', 'form': form.as_p()})
 
         u = User(username=form.cleaned_data['login'], email=form.cleaned_data['email'],
-                 last_name=form.cleaned_data['surname'], first_name=form.cleaned_data['name'])
+                 last_name=form.cleaned_data['last_name'], first_name=form.cleaned_data['first_name'])
         u.set_password(form.cleaned_data['password'])
         u.save()
         return redirect('/login', {'errors': 'Вы зарегестрировались, авторизируйтесь.'})
